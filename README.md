@@ -1,175 +1,176 @@
-# Omnivore
-
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/omnivore-app/omnivore/Run%20tests)](https://github.com/omnivore-app/omnivore/actions/workflows/run-tests.yaml)
-[![Discord](https://img.shields.io/discord/844965259462311966?label=Join%20our%20Discord)](https://discord.gg/h2z5rppzz9)
-[![Mastodon Follow](https://img.shields.io/mastodon/follow/109458738600914558?domain=https%3A%2F%2Fpkm.social)](https://pkm.social/@omnivore)
-[![Twitter Follow](https://img.shields.io/twitter/follow/omnivoreapp)](https://twitter.com/OmnivoreApp)
-![GitHub](https://img.shields.io/github/license/omnivore-app/omnivore)
-
-<img align="right" src="https://avatars.githubusercontent.com/u/70113176?s=400&u=506b21d9f019f3160963c010ef363667fb24c7c9&v=4" height="150px" alt="Omnivore Logo">
-
-[Omnivore](https://omnivore.app) is a complete, open source read-it-later solution for people who like text.
-
-We built Omnivore because we love reading and we want it to be more social. Join us!
-
-- Highlighting, notes, search, and sharing
-- Full keyboard navigation
-- Automatically saves your place in long articles
-- Add newsletter articles via email (with substack support!)
-- PDF support
-- [Web app](https://omnivore.app/) written in Node.js and TypeScript
-- [Native iOS app](https://omnivore.app/install/ios) ([source](https://github.com/omnivore-app/omnivore/tree/main/apple))
-- [Android app](https://omnivore.app/install/android) ([source](https://github.com/omnivore-app/omnivore/tree/main/android/Omnivore))
-- Progressive web app for Android users
-- Browser extensions for [Chrome](https://omnivore.app/install/chrome), [Safari](https://omnivore.app/install/safari), [Firefox](https://omnivore.app/install/firefox), and [Edge](https://omnivore.app/install/edge)
-- Labels (aka tagging)
-- Offline support
-- Text to speech (iOS only)
-- [Logseq](https://logseq.com/) support via our [Logseq Plugin](https://github.com/omnivore-app/logseq-omnivore)
-- [Obsidian](https://obsidian.md/) support via our [Obsidian Plugin](https://github.com/omnivore-app/obsidian-omnivore)
-
-Every single part is fully open source! Fork it, extend it, or deploy it to your own server.
-
-We also have a free hosted version of Omnivore at [omnivore.app](https://omnivore.app/) -- try it now!
-
-<img width="981" alt="web-screenshot-listview" src="https://github.com/omnivore-app/omnivore/assets/75189/df7c797a-4255-42f4-a686-ad94866cb580">
-
-## Join us on Discord! :speech_balloon:
-
-We're building our community on Discord. [Join us!](https://discord.gg/h2z5rppzz9)
-
-Read more about Omnivore on our blog. <https://blog.omnivore.app/p/getting-started-with-omnivore>
-
-## Shoutouts :tada:
-
-Omnivore takes advantage of some great open source software:
-
-- [TypeScript](https://www.typescriptlang.org/) - Most of our backend and frontend are written in TypeScript.
-- [Next.js](https://nextjs.org/) - Our frontend is a Next.JS app and is hosted on [Vercel](https://vercel.com/).
-- [SWR](https://swr.vercel.app/) - We do all our data fetching on the web using SWR.
-- [Stitches](https://stitches.dev/) - We use Stitches on the frontend to style our components.
-- [Mozilla Readability](https://github.com/mozilla/readability) - We use Mozilla's Readability library to make pages easier to read.
-- [Swift GraphQL](https://www.swift-graphql.com/) - We generate our GraphQL queries on iOS using Swift GraphQL.
-- [Radix](https://www.radix-ui.com/) - We use Radix UI's components on our frontend.
-- And many more awesome libraries, just checkout our package files to see what we are using.
-
-## Importing Libraries
-
-If you have a library you'd like to import, [@davidohlin](https://github.com/davidohlin) has created
-a tool that imports a list of CSV URLs: [omnivore-import](https://github.com/davidohlin/instapaper-to-omnivore-import)
-
-## How to setup local development :computer:
-
-The easiest way to get started with local development is to use `docker compose up`. This will start a postgres container, our web frontend, an API server, and our content fetching microservice.
-
-### Requirements for development
-
-Omnivore is written in TypeScript and JavaScript.
-
-- [Node](https://nodejs.org/) -- currently we are using Node.js v14.18
-- [Chromium](https://www.chromium.org/chromium-projects/) -- see below for installation info
-
-### Running the web and API services
-
-### 1. Start docker compose
-
-```bash
-git clone https://github.com/omnivore-app/omnivore
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">杂食动物</font></font></h1><a id="user-content-omnivore" class="anchor" aria-label="永久链接： 杂食动物" href="#omnivore"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://github.com/omnivore-app/omnivore/actions/workflows/run-tests.yaml"><img src="https://camo.githubusercontent.com/b54936d6f8b8d0ac5dae43f7f4ebb8ee78dde83733e4e6cdea470960eee9ef60/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f6f6d6e69766f72652d6170702f6f6d6e69766f72652f72756e2d74657374732e79616d6c3f6272616e63683d6d61696e" alt="GitHub 工作流程状态" data-canonical-src="https://img.shields.io/github/actions/workflow/status/omnivore-app/omnivore/run-tests.yaml?branch=main" style="max-width: 100%;"></a>
+<a href="https://discord.gg/h2z5rppzz9" rel="nofollow"><img src="https://camo.githubusercontent.com/424b46cd37a0f68e03bf8a778aab2dfedaf77ef3ee83f60970b7a63c269259eb/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3834343936353235393436323331313936363f6c6162656c3d4a6f696e2532306f7572253230446973636f7264" alt="不和谐" data-canonical-src="https://img.shields.io/discord/844965259462311966?label=Join%20our%20Discord" style="max-width: 100%;"></a>
+<a href="https://pkm.social/@omnivore" rel="nofollow"><img src="https://camo.githubusercontent.com/ed2eae86d50e539d125a4a9bd8b42cde0de532ef02ec0db87f5c55fbc7e9798e/68747470733a2f2f696d672e736869656c64732e696f2f6d6173746f646f6e2f666f6c6c6f772f3130393435383733383630303931343535383f646f6d61696e3d6874747073253341253246253246706b6d2e736f6369616c" alt="Mastodon 关注" data-canonical-src="https://img.shields.io/mastodon/follow/109458738600914558?domain=https%3A%2F%2Fpkm.social" style="max-width: 100%;"></a>
+<a href="https://twitter.com/OmnivoreApp" rel="nofollow"><img src="https://camo.githubusercontent.com/e806005405365291b52910c3c0914b90db4f657abb9d7067f96fcaf301b8dcee/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f6f6d6e69766f7265617070" alt="推特关注" data-canonical-src="https://img.shields.io/twitter/follow/omnivoreapp" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/753d3a18d62416261126abdf2c787abf96eef8f49724fa32e910ff8386b30a7e/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6f6d6e69766f72652d6170702f6f6d6e69766f7265"><img src="https://camo.githubusercontent.com/753d3a18d62416261126abdf2c787abf96eef8f49724fa32e910ff8386b30a7e/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6f6d6e69766f72652d6170702f6f6d6e69766f7265" alt="GitHub" data-canonical-src="https://img.shields.io/github/license/omnivore-app/omnivore" style="max-width: 100%;"></a></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://avatars.githubusercontent.com/u/70113176?s=400&amp;u=506b21d9f019f3160963c010ef363667fb24c7c9&amp;v=4"><img align="right" src="https://avatars.githubusercontent.com/u/70113176?s=400&amp;u=506b21d9f019f3160963c010ef363667fb24c7c9&amp;v=4" height="150px" alt="杂食动物标志" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://omnivore.app" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Omnivore</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是一个完整的、开源的稍后阅读解决方案，适合喜欢文本的人。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们创建 Omnivore 是因为我们热爱阅读，我们希望它更具社交性。加入我们吧！</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">突出显示、注释、搜索和共享</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">全键盘导航</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动保存您在长文章中的位置</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过电子邮件添加新闻稿文章（带有 substack 支持！）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PDF 支持</font></font></li>
+<li><a href="https://omnivore.app/" rel="nofollow"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用 Node.js 和 TypeScript 编写的</font><a href="https://omnivore.app/" rel="nofollow"><font style="vertical-align: inherit;">Web 应用程序</font></a></font></li>
+<li><a href="https://omnivore.app/install/ios" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">本机 iOS 应用程序</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><a href="https://github.com/omnivore-app/omnivore/tree/main/apple"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">来源</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></li>
+<li><a href="https://omnivore.app/install/android" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Android 应用程序</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><a href="https://github.com/omnivore-app/omnivore/tree/main/android/Omnivore"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">来源</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">适合 Android 用户的渐进式 Web 应用程序</font></font></li>
+<li><font style="vertical-align: inherit;"></font><a href="https://omnivore.app/install/chrome" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">适用于Chrome</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://omnivore.app/install/safari" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Safari</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://omnivore.app/install/firefox" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Firefox</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font><a href="https://omnivore.app/install/edge" rel="nofollow"><font style="vertical-align: inherit;">Edge</font></a><font style="vertical-align: inherit;">的浏览器扩展</font></font><a href="https://omnivore.app/install/edge" rel="nofollow"><font style="vertical-align: inherit;"></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">标签（又名标记）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">离线支持</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文本转语音（仅限 iOS）</font></font></li>
+<li><a href="https://logseq.com/" rel="nofollow"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过我们的</font><a href="https://github.com/omnivore-app/logseq-omnivore"><font style="vertical-align: inherit;">Logseq 插件支持</font></a><a href="https://logseq.com/" rel="nofollow"><font style="vertical-align: inherit;">Logseq</font></a></font><a href="https://github.com/omnivore-app/logseq-omnivore"><font style="vertical-align: inherit;"></font></a></li>
+<li><a href="https://obsidian.md/" rel="nofollow"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过我们的</font><a href="https://github.com/omnivore-app/obsidian-omnivore"><font style="vertical-align: inherit;">黑曜石插件提供</font></a><a href="https://obsidian.md/" rel="nofollow"><font style="vertical-align: inherit;">黑曜石支持</font></a></font><a href="https://github.com/omnivore-app/obsidian-omnivore"><font style="vertical-align: inherit;"></font></a></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">每个部分都是完全开源的！分叉它、扩展它或将它部署到您自己的服务器。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://omnivore.app/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们还在omnivore.app</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上提供了免费托管的Omnivore 版本</font><font style="vertical-align: inherit;">——立即尝试！</font></font></p>
+<a target="_blank" rel="noopener noreferrer" href="https://private-user-images.githubusercontent.com/75189/258374667-df7c797a-4255-42f4-a686-ad94866cb580.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTYzNjQ3MjQsIm5iZiI6MTcxNjM2NDQyNCwicGF0aCI6Ii83NTE4OS8yNTgzNzQ2NjctZGY3Yzc5N2EtNDI1NS00MmY0LWE2ODYtYWQ5NDg2NmNiNTgwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTIyVDA3NTM0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA2NDI0NGUxYjYzYjdlZjE5ZTk1MGJjMTBlOTk5MTA3MjM2Y2I1NTMwZGI2NGRiMWVjYTBkM2YzYjM0NWVhYjcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.A-kczuPqWeP0uUmAWo61HpaGAfGseEfEzeeobtdIsHk"><img width="981" alt="网页截图列表视图" src="https://private-user-images.githubusercontent.com/75189/258374667-df7c797a-4255-42f4-a686-ad94866cb580.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTYzNjQ3MjQsIm5iZiI6MTcxNjM2NDQyNCwicGF0aCI6Ii83NTE4OS8yNTgzNzQ2NjctZGY3Yzc5N2EtNDI1NS00MmY0LWE2ODYtYWQ5NDg2NmNiNTgwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTIyVDA3NTM0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA2NDI0NGUxYjYzYjdlZjE5ZTk1MGJjMTBlOTk5MTA3MjM2Y2I1NTMwZGI2NGRiMWVjYTBkM2YzYjM0NWVhYjcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.A-kczuPqWeP0uUmAWo61HpaGAfGseEfEzeeobtdIsHk" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加入我们的 Discord！ 💬</font></font></h2><a id="user-content-join-us-on-discord-speech_balloon" class="anchor" aria-label="永久链接：加入我们的 Discord！ :语音气球:" href="#join-us-on-discord-speech_balloon"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们正在 Discord 上建立我们的社区。</font></font><a href="https://discord.gg/h2z5rppzz9" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加入我们！</font></font></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在我们的博客上了解有关 Omnivore 的更多信息。https </font></font><a href="https://blog.omnivore.app/p/getting-started-with-omnivore" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">://blog.omnivore.app/p/getting-started-with-omnivore</font></font></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">大声喊叫🎉</font></font></h2><a id="user-content-shoutouts-tada" class="anchor" aria-label="永久链接：大喊大叫：tada：" href="#shoutouts-tada"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Omnivore 利用了一些优秀的开源软件：</font></font></p>
+<ul dir="auto">
+<li><a href="https://www.typescriptlang.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TypeScript</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> - 我们的大多数后端和前端都是用 TypeScript 编写的。</font></font></li>
+<li><a href="https://nextjs.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Next.js</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> - 我们的前端是 Next.JS 应用程序，托管在</font></font><a href="https://vercel.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Vercel</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上。</font></font></li>
+<li><a href="https://swr.vercel.app/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SWR</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> - 我们使用 SWR 在网络上获取所有数据。</font></font></li>
+<li><a href="https://stitches.dev/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Stitches</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> - 我们在前端使用 Stitches 来设计我们的组件。</font></font></li>
+<li><a href="https://github.com/mozilla/readability"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mozilla Readability</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> - 我们使用 Mozilla 的 Readability 库来使页面更易于阅读。</font></font></li>
+<li><a href="https://www.swift-graphql.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Swift GraphQL</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> - 我们使用 Swift GraphQL 在 iOS 上生成 GraphQL 查询.</font></font></li>
+<li><a href="https://www.apollographql.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apollo GraphQL</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> - 我们使用 Apollo GraphQL 在 Android 上生成 GraphQL 查询.</font></font></li>
+<li><a href="https://www.radix-ui.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Radix</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> - 我们在前端使用 Radix UI 的组件。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">还有更多很棒的库，只需查看我们的包文件即可了解我们正在使用什么。</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">导入库</font></font></h2><a id="user-content-importing-libraries" class="anchor" aria-label="永久链接：导入库" href="#importing-libraries"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">查看我们的</font></font><a href="https://docs.omnivore.app/using/importing.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以获取有关从其他应用程序导入数据的信息。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如何设置本地开发💻</font></font></h2><a id="user-content-how-to-setup-local-development-computer" class="anchor" aria-label="永久链接：如何设置本地开发：计算机：" href="#how-to-setup-local-development-computer"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开始本地开发的最简单方法是使用</font></font><code>docker compose up</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.这将启动一个 postgres 容器、我们的 Web 前端、API 服务器和我们的内容获取微服务。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开发要求</font></font></h3><a id="user-content-requirements-for-development" class="anchor" aria-label="永久链接：开发要求" href="#requirements-for-development"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Omnivore 是用 TypeScript 和 JavaScript 编写的。</font></font></p>
+<ul dir="auto">
+<li><a href="https://nodejs.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Node——</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目前我们使用的是 Node.js v18.16</font></font></li>
+<li><a href="https://www.chromium.org/chromium-projects/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chromium——</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装信息见下文</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运行 Web 和 API 服务</font></font></h3><a id="user-content-running-the-web-and-api-services" class="anchor" aria-label="永久链接：运行 Web 和 API 服务" href="#running-the-web-and-api-services"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1.启动docker-compose</font></font></h3><a id="user-content-1-start-docker-compose" class="anchor" aria-label="永久链接： 1. 启动 docker compose" href="#1-start-docker-compose"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>git clone https://github.com/omnivore-app/omnivore
+<span class="pl-c1">cd</span> omnivore
+docker compose up</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="git clone https://github.com/omnivore-app/omnivore
 cd omnivore
-docker compose up
-```
-
-This will start postgres, initialize the database, and start the web and api services.
-
-### 2. Open the browser
-
-Open <http://localhost:3000> and confirm Omnivore is running
-
-### 3. Login with the test account
-
-During database setup docker compose creates an account `demo@omnivore.app`, password: `demo_password`.
-
-Go to <http://localhost:3000/> in your browser and choose `Continue with Email` to login.
-
-### Frontend Development
-
-If you want to work on just the frontend of Omnivore you can run the backend services
-with docker compose and the frontend locally:
-
-```bash
-docker compose up api content-fetch
+docker compose up" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这将启动 postgres、初始化数据库并启动 Web 和 api 服务。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2.打开浏览器</font></font></h3><a id="user-content-2-open-the-browser" class="anchor" aria-label="永久链接：2. 打开浏览器" href="#2-open-the-browser"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">打开</font></font><a href="http://localhost:3000" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://localhost:3000</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并确认 Omnivore 正在运行</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3.使用测试账号登录</font></font></h3><a id="user-content-3-login-with-the-test-account" class="anchor" aria-label="永久链接： 3. 使用测试帐户登录" href="#3-login-with-the-test-account"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在数据库设置期间，docker compose 创建一个帐户</font></font><code>demo@omnivore.app</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，密码：</font></font><code>demo_password</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在浏览器中</font><font style="vertical-align: inherit;">访问</font></font><a href="http://localhost:3000/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://localhost:3000/</font></font></a><font style="vertical-align: inherit;"></font><code>Continue with Email</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并选择登录。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">前端开发</font></font></h3><a id="user-content-frontend-development" class="anchor" aria-label="永久链接：前端开发" href="#frontend-development"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您只想使用 Omnivore 的前端，您可以使用 docker compose 在本地运行后端服务并运行前端：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>docker compose up api content-fetch
+<span class="pl-c1">cd</span> packages/web
+cp .env.template .env.local
+yarn dev</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="docker compose up api content-fetch
 cd packages/web
 cp .env.template .env.local
-yarn dev
-```
-
-You will need to configure some values in the new `.env.local` file. These are
-the values for running the `web` service directly on your host machine and
-running `api` and `content-fetch` within docker:
-
-```sh
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
+yarn dev" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您将需要在新</font></font><code>.env.local</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件中配置一些值。这些是</font></font><code>web</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">直接在主机上运行服务并在 docker 中运行</font></font><code>api</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的</font><font style="vertical-align: inherit;">值</font></font><code>content-fetch</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>NEXT_PUBLIC_BASE_URL=http://localhost:3000
 NEXT_PUBLIC_HIGHLIGHTS_BASE_URL=http://localhost:3000
 NEXT_PUBLIC_LOCAL_BASE_URL=http://localhost:3000
 NEXT_PUBLIC_SERVER_BASE_URL=http://localhost:4000
-NEXT_PUBLIC_LOCAL_SERVER_BASE_URL=http://localhost:4000
-```
-
-### Running the puppeteer-parse service outside of Docker
-
-To save pages you need to run the `puppeteer-parse` service.
-
-### 1. Install and configure Chromium
-
-```
-brew install chromium --no-quarantine
+NEXT_PUBLIC_LOCAL_SERVER_BASE_URL=http://localhost:4000</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="NEXT_PUBLIC_BASE_URL=http://localhost:3000
+NEXT_PUBLIC_HIGHLIGHTS_BASE_URL=http://localhost:3000
+NEXT_PUBLIC_LOCAL_BASE_URL=http://localhost:3000
+NEXT_PUBLIC_SERVER_BASE_URL=http://localhost:4000
+NEXT_PUBLIC_LOCAL_SERVER_BASE_URL=http://localhost:4000" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 Docker 外部运行 puppeteer-parse 服务</font></font></h3><a id="user-content-running-the-puppeteer-parse-service-outside-of-docker" class="anchor" aria-label="永久链接：在 Docker 外部运行 puppeteer-parse 服务" href="#running-the-puppeteer-parse-service-outside-of-docker"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要保存页面，您需要运行该</font></font><code>puppeteer-parse</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">服务。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1.安装并配置Chromium</font></font></h3><a id="user-content-1-install-and-configure-chromium" class="anchor" aria-label="永久链接：1.安装和配置 Chromium" href="#1-install-and-configure-chromium"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>brew install chromium --no-quarantine
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export CHROMIUM_PATH=`which chromium`
-```
-
-### 2. Navigate to the service directory, setup your env file, and install dependencies
-
-```
-cd packages/puppeteer-parse
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="brew install chromium --no-quarantine
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export CHROMIUM_PATH=`which chromium`" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2. 导航到服务目录，设置 env 文件并安装依赖项</font></font></h3><a id="user-content-2-navigate-to-the-service-directory-setup-your-env-file-and-install-dependencies" class="anchor" aria-label="永久链接：2. 导航到服务目录，设置 env 文件并安装依赖项" href="#2-navigate-to-the-service-directory-setup-your-env-file-and-install-dependencies"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>cd packages/puppeteer-parse
 cp .env.example .env
 yarn
-```
-
-### 3. Start the service
-
-```
-yarn start
-```
-
-This will start the puppeteer-parse service on port 9090.
-
-In your browser go to <http://localhost:3000/home>, click the `Add Link` button,
-and enter a URL such as `https://blog.omnivore.app/p/getting-started-with-omnivore`.
-
-You should see a Chromium window open and navigate to your link. When the service
-is done fetching your content you will see it in your library.
-
-## How to deploy to your own server
-
-Omnivore was originally designed to be deployed on GCP and takes advantage
-of some of GCP's PaaS features. We are working to make Omnivore more portable
-so you can easily run the service on your own infrastructure. You can track
-progress here: https://github.com/omnivore-app/omnivore/issues/25
-
-To deploy Omnivore on your own hardware you will need to deploy three
-dockerized services and configure access to a postgres service. To handle
-PDF documents you will need to configure access to a Google Cloud Storage
-bucket.
-
-- `packages/api` - the backend API service
-- `packages/web` - the web frontend (can easily be deployed to vercel)
-- `packages/puppeteer-parse` - the content fetching service (can easily
-  be deployed as an AWS lambda or GCP Cloud Function)
-
-Additionally, you will need to run our database migrations to initialize
-your database. These are dockerized and can be run with the
-`packages/db` service.
-
-## License
-
-Omnivore and our extensions to Readability.js are under the AGPL-3.0 license.
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="cd packages/puppeteer-parse
+cp .env.example .env
+yarn" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3.启动服务</font></font></h3><a id="user-content-3-start-the-service" class="anchor" aria-label="永久链接：3.启动服务" href="#3-start-the-service"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>yarn start
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="yarn start" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这将在端口 9090 上启动 puppeteer-parse 服务。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在浏览器中转到</font></font><a href="http://localhost:3000/home" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://localhost:3000/home</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，单击</font></font><code>Add Link</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">按钮，然后输入 URL，例如</font></font><code>https://blog.omnivore.app/p/getting-started-with-omnivore</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您应该会看到一个 Chromium 窗口打开并导航到您的链接。当服务完成获取您的内容后，您将在图书馆中看到它。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如何部署到你自己的服务器</font></font></h2><a id="user-content-how-to-deploy-to-your-own-server" class="anchor" aria-label="永久链接：如何部署到你自己的服务器" href="#how-to-deploy-to-your-own-server"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Omnivore 最初设计为部署在 GCP 上，并利用 GCP 的一些 PaaS 功能。我们正在努力使 Omnivore 更加便携，以便您可以在自己的基础设施上轻松运行该服务。您可以在此处跟踪进度：</font></font><a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1134368549" data-permission-text="Title is private" data-url="https://github.com/omnivore-app/omnivore/issues/25" data-hovercard-type="issue" data-hovercard-url="/omnivore-app/omnivore/issues/25/hovercard" href="https://github.com/omnivore-app/omnivore/issues/25"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#25</font></font></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要在您自己的硬件上部署 Omnivore，您需要部署三个 docker 化服务并配置对 postgres 服务的访问。要处理 PDF 文档，您需要配置对 Google Cloud Storage 存储桶的访问。</font></font></p>
+<ul dir="auto">
+<li><code>packages/api</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- 后端API服务</font></font></li>
+<li><code>packages/web</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- Web 前端（可以轻松部署到 vercel）</font></font></li>
+<li><code>packages/puppeteer-parse</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- 内容获取服务（可以轻松部署为 AWS lambda 或 GCP Cloud Function）</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此外，您将需要运行我们的数据库迁移来初始化您的数据库。它们是 Docker 化的，可以与服务一起运行
+</font></font><code>packages/db</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h2><a id="user-content-license" class="anchor" aria-label="永久链接：许可证" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Omnivore 和我们对 Readability.js 的扩展均遵循 AGPL-3.0 许可证。</font></font></p>
+</article></div>
